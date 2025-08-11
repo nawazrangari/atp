@@ -1,0 +1,52 @@
+<div class="container">
+<div class="row">
+  <div class="col-3">
+    <div class="alert alert-success" role="alert">
+    Sum Of Chat : {{totalChat}}
+    </div>
+    </div>
+    <div class="col-3"> 
+    <div class="alert alert-danger" role="alert">
+    Sum Of MissedChat : {{totalMissedChat}}
+    </div>
+  </div>
+  <div align="center" class="col-6">
+    <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+      <input type="text"
+             placeholder="Daterangepicker"
+             class="form-control"
+             bsDaterangepicker
+             [(ngModel)]="fromAndToDate"
+             (bsValueChange)="onDateChange($event)">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">WebsiteId</th>
+          <th scope="col">Chats</th>
+          <th scope="col">MissedChats</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor = "let data of chatsData">
+          <td>{{data.websiteId}}</td>
+          <td>{{data.chats}}</td>
+          <td>{{data.missedChats}}</td>
+          <td>{{data.date}}</td>
+        </tr>            
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+
+
+
+
+ 
